@@ -2,27 +2,22 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Education from "./components/Education";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import ExtraCurricular from "./components/ExtraCurricular";
 import Contact from "./components/Contact";
-import CursorGlow from "./components/CursorGlow";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
-      {/* Cursor glow effect */}
-      <CursorGlow />
-
-      {/* Fixed navigation */}
+    <div style={{ backgroundColor: "#020617", color: "white" }}>
       <Navbar />
-
-      {/* Main sections */}
       <Hero />
       <About />
       <Education />
+      <Skills />
       <Projects />
-      <ExtraCurricular />
       <Contact />
+      <Footer />
     </div>
   );
 }
