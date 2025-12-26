@@ -17,7 +17,8 @@ function Skills() {
         textAlign: "center",
       }}
     >
-      <h2 style={{ fontSize: "32px", marginBottom: "30px" }}>Skills</h2>
+      <h2 style={{ color: "white" }}>Skills</h2>
+
 
       <div
         style={{

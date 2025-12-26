@@ -1,6 +1,11 @@
+import { motion } from "framer-motion";
+
 function Navbar() {
   return (
-    <nav
+    <motion.nav
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
       style={{
         position: "fixed",
         top: 0,
@@ -13,23 +18,23 @@ function Navbar() {
         zIndex: 1000,
       }}
     >
-      <h2>Pooja Kumari</h2>
+      <h2 style={{ color: "#a5b4fc" }}>Pooja Kumari</h2>
 
       <div style={{ display: "flex", gap: "20px" }}>
-        <a href="#home" style={{ color: "white", textDecoration: "none" }}>
-          Home
-        </a>
-        <a href="#about" style={{ color: "white", textDecoration: "none" }}>
-          About
-        </a>
-        <a href="#projects" style={{ color: "white", textDecoration: "none" }}>
-          Projects
-        </a>
-        <a href="#contact" style={{ color: "white", textDecoration: "none" }}>
-          Contact
-        </a>
+        {["Home", "About", "Projects", "Activities", "Contact"].map(
+          (item, i) => (
+            <motion.a
+              key={i}
+              href={`#${item.toLowerCase()}`}
+              whileHover={{ scale: 1.1 }}
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              {item}
+            </motion.a>
+          )
+        )}
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 
