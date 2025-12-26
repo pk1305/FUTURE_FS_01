@@ -4,27 +4,52 @@ function Hero() {
       id="home"
       style={{
         minHeight: "100vh",
-        backgroundColor: "#0f172a",
+        background: "linear-gradient(180deg, #020617, #020617)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        color: "white",
         paddingTop: "80px",
+        color: "white",
       }}
     >
-      <h1 style={{ fontSize: "48px", marginBottom: "10px" }}>
+      {/* PROFILE IMAGE */}
+      <div
+        style={{
+          width: "170px",
+          height: "170px",
+          borderRadius: "50%",
+          border: "4px solid #6366f1",
+          padding: "6px",
+          marginBottom: "20px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src="/pooja.jpg"
+          alt="Pooja Kumari"
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: "50%",
+            objectFit: "cover",
+          }}
+        />
+      </div>
+
+      <h1 style={{ fontSize: "clamp(30px, 5vw, 48px)" }}>
         Hi, I'm Pooja Kumari 👋
       </h1>
 
-      <p style={{ fontSize: "18px", color: "#cbd5f5" }}>
+      <p style={{ fontSize: "18px", color: "#cbd5f5", marginTop: "10px" }}>
         Full Stack Web Developer
       </p>
 
       {/* BUTTONS */}
-      <div style={{ display: "flex", gap: "15px", marginTop: "25px" }}>
-        {/* View Projects Button */}
+      <div style={{ display: "flex", gap: "15px", marginTop: "30px" }}>
         <a href="#projects">
           <button
             style={{
@@ -41,12 +66,11 @@ function Hero() {
           </button>
         </a>
 
-        {/* Download Resume Button */}
         <a href="/Pooja_Kumari_Resume.pdf" download>
           <button
             style={{
               padding: "12px 25px",
-              backgroundColor: "#1e293b",
+              backgroundColor: "#020617",
               color: "white",
               border: "1px solid #6366f1",
               borderRadius: "8px",
