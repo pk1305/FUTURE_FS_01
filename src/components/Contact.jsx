@@ -1,23 +1,51 @@
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+
 function Contact() {
+  const formRef = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nbxigsv",     // 🔴 replace
+        "template_57x7m4j",    // 🔴 replace
+        formRef.current,
+        "fG3OZnMrhU_YijZp0"      // 🔴 replace
+      )
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          alert("❌ Failed to send message");
+          console.error(error);
+        }
+      );
+  };
+
   return (
     <section
       id="contact"
       style={{
-        padding: "100px 40px",
-        backgroundColor: "#0f172a",
+        padding: "80px 20px",
+        backgroundColor: "#020617",
+        color: "white",
         textAlign: "center",
       }}
     >
-      <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>Contact Me</h2>
-
-      <p style={{ marginBottom: "30px", color: "#cbd5f5" }}>
-        Feel free to reach out for collaborations or opportunities.
-      </p>
+      <h2 style={{ fontSize: "36px", marginBottom: "30px" }}>
+        Contact Me
+      </h2>
 
       <form
+        ref={formRef}
+        onSubmit={sendEmail}
         style={{
           maxWidth: "500px",
-          margin: "0 auto",
+          margin: "auto",
           display: "flex",
           flexDirection: "column",
           gap: "15px",
@@ -25,36 +53,27 @@ function Contact() {
       >
         <input
           type="text"
+          name="from_name"
           placeholder="Your Name"
           required
-          style={{
-            padding: "12px",
-            borderRadius: "6px",
-            border: "none",
-          }}
+          style={inputStyle}
         />
 
         <input
           type="email"
+          name="from_email"
           placeholder="Your Email"
           required
-          style={{
-            padding: "12px",
-            borderRadius: "6px",
-            border: "none",
-          }}
+          style={inputStyle}
         />
 
         <textarea
+          name="message"
           placeholder="Your Message"
-          rows="4"
+          rows="5"
           required
-          style={{
-            padding: "12px",
-            borderRadius: "6px",
-            border: "none",
-          }}
-        ></textarea>
+          style={inputStyle}
+        />
 
         <button
           type="submit"
@@ -63,7 +82,7 @@ function Contact() {
             backgroundColor: "#6366f1",
             color: "white",
             border: "none",
-            borderRadius: "6px",
+            borderRadius: "8px",
             cursor: "pointer",
             fontSize: "16px",
           }}
@@ -74,5 +93,13 @@ function Contact() {
     </section>
   );
 }
+
+const inputStyle = {
+  padding: "12px",
+  borderRadius: "6px",
+  border: "none",
+  outline: "none",
+  fontSize: "15px",
+};
 
 export default Contact;
