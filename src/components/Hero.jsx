@@ -40,9 +40,10 @@ function Hero() {
         />
       </div>
 
-      <h1 style={{ fontSize: "clamp(30px, 5vw, 48px)" }}>
-        Hi, I'm Pooja Kumari 👋
-      </h1>
+      <h1 style={{ color: "white" }}>
+  Hi, I'm <span className="gradient-text">Pooja Kumari</span> 👋
+</h1>
+
 
       <p style={{ fontSize: "18px", color: "#cbd5f5", marginTop: "10px" }}>
         Full Stack Web Developer

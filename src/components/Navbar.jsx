@@ -18,7 +18,9 @@ function Navbar() {
         zIndex: 1000,
       }}
     >
-      <h2 style={{ color: "#a5b4fc" }}>Pooja Kumari</h2>
+     <h2 className="gradient-text">Pooja Kumari</h2>
+
+
 
       <div style={{ display: "flex", gap: "20px" }}>
         {["Home", "About", "Projects", "Activities", "Contact"].map(

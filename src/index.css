@@ -77,6 +77,42 @@ button:focus-visible {
 .project p {
   color: #e5e7eb;
 }
+.cursor-glow {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(99,102,241,0.35), transparent 60%);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: left 0.05s linear, top 0.05s linear;
+}
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #6366f1,
+    #22d3ee,
+    #a78bfa,
+    #6366f1
+  );
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 
   }

@@ -6,11 +6,14 @@ import Projects from "./components/Projects";
 import Certificates from "./components/Certificates_Temp";
 import Contact from "./components/Contact";
 import ExtraCurricular from "./components/ExtraCurricular";
+import CursorGlow from "./components/CursorGlow";
+
 
 
 function App() {
   return (
     <div>
+      <CursorGlow />
       <Navbar />
       <Hero />
       <About />
