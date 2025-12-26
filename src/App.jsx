@@ -1,26 +1,27 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills";
+import Education from "./components/Education";
 import Projects from "./components/Projects";
-import Certificates from "./components/Certificates_Temp";
-import Contact from "./components/Contact";
 import ExtraCurricular from "./components/ExtraCurricular";
+import Contact from "./components/Contact";
 import CursorGlow from "./components/CursorGlow";
-
-
 
 function App() {
   return (
     <div>
+      {/* Cursor glow effect */}
       <CursorGlow />
+
+      {/* Fixed navigation */}
       <Navbar />
+
+      {/* Main sections */}
       <Hero />
       <About />
-      <Skills />
+      <Education />
       <Projects />
       <ExtraCurricular />
-      <Certificates />
       <Contact />
     </div>
   );
